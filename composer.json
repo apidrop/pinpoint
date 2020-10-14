@@ -1,0 +1,39 @@
+{
+    "name": "apidrop/pinpoint",
+    "description": "AWS Pinpoint driver for Laravel",
+    "homepage": "https://github.com/apidrop/pinpoint",
+    "type": "library",
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Fabrizio D'Ammassa",
+            "email": "fammassa@pricefy.io"
+        },
+        {
+            "name": "Vincenzo Luongo",
+            "email": "luongo.vincenzo.92@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Apidrop\\PinPoint\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apidrop\\PinPoint\\PinpointMailServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/phpunit --verbose --debug"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "aws/aws-sdk-php-laravel": "~3.0"
+    }
+}
